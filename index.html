@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sujay Kumar | Portfolio</title>
+    <!-- TailwindCSS CDN for quick styling; can be replaced with local build later -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- -------------------------------------------------- -->
+    <!-- HEADER -->
+    <!-- -------------------------------------------------- -->
+    <header class="bg-white shadow">
+      <div class="max-w-4xl mx-auto p-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Sujay Kumar</h1>
+        <nav class="space-x-4">
+          <a href="#about" class="hover:text-blue-600">About</a>
+          <a href="#projects" class="hover:text-blue-600">Projects</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- -------------------------------------------------- -->
+    <!-- MAIN CONTENT -->
+    <!-- -------------------------------------------------- -->
+    <main class="max-w-4xl mx-auto p-6 space-y-24">
+      <!-- About Section -->
+      <section id="about" class="scroll-mt-20">
+        <h2 class="text-xl font-semibold mb-4">👋 About Me</h2>
+        <p>
+          Final‑year engineering student passionate about Python, React, and machine
+          learning. Currently building <strong>DetectVision</strong> (object
+          detection) and <strong>QueryTwin</strong> (NLP). Always eager to learn &
+          collaborate on open‑source.
+        </p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="scroll-mt-20">
+        <h2 class="text-xl font-semibold mb-4">💻 Featured Projects</h2>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <!-- DetectVision Card -->
+          <article class="bg-white rounded-xl shadow p-4">
+            <h3 class="font-bold mb-1">DetectVision</h3>
+            <p class="text-sm mb-3">
+              Object detection toolkit built with Python, OpenCV & MobileNet.
+            </p>
+            <a
+              href="https://github.com/sujaykumar03/DetectVision"
+              target="_blank"
+              class="text-blue-600 hover:underline text-sm"
+              >Source Code →</a
+            >
+          </article>
+
+          <!-- QueryTwin Card -->
+          <article class="bg-white rounded-xl shadow p-4">
+            <h3 class="font-bold mb-1">QueryTwin</h3>
+            <p class="text-sm mb-3">
+              NLP project that finds semantically similar questions on Quora using
+              vector similarity.
+            </p>
+            <span class="text-gray-400 text-sm">Coming&nbsp;Soon</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="scroll-mt-20">
+        <h2 class="text-xl font-semibold mb-4">📬 Get in Touch</h2>
+        <p class="mb-4">
+          Email me at
+          <a
+            href="mailto:sujay3336@gmail.com"
+            class="text-blue-600 hover:underline"
+            >sujay3336@gmail.com</a
+          >, or connect on
+          <a
+            href="https://www.linkedin.com/in/sujay-kumar-7456bb247/"
+            target="_blank"
+            class="text-blue-600 hover:underline"
+            >LinkedIn</a
+          >.
+        </p>
+        <div class="flex space-x-4 text-sm">
+          <a
+            href="https://github.com/sujaykumar03"
+            target="_blank"
+            class="hover:text-gray-600"
+            >GitHub</a
+          >
+          <a
+            href="https://linkedin.com/in/sujay-kumar-7456bb247"
+            target="_blank"
+            class="hover:text-gray-600"
+            >LinkedIn</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- -------------------------------------------------- -->
+    <!-- FOOTER -->
+    <!-- -------------------------------------------------- -->
+    <footer class="text-center text-xs py-6 text-gray-500">
+      © 2025 Sujay Kumar. Built with <a href="https://tailwindcss.com" class="hover:underline">Tailwind CSS</a>.
+    </footer>
+  </body>
+</html>
