@@ -1,135 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sujay Kumar | Portfolio</title>
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-      /* scroll‑in animation */
-      [data-aos]{opacity:0;transform:translateY(40px) scale(.95);transition:all .8s cubic-bezier(.2,.8,.4,1)}
-      [data-aos].aos-animate{opacity:1;transform:translateY(0) scale(1)}
-      /* glass card */
-      .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(8px)}
-      /* sticky shrink header */
-      #heroHeader{transition:all .4s ease-in-out;transform-origin:top left}
-      #heroHeader.stickyHero{position:fixed;top:12px;left:16px;z-index:50;transform:scale(.55)}
-    </style>
-    <script>
-      document.addEventListener('DOMContentLoaded',()=>{
-        /* IntersectionObserver for scroll animations */
-        const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('aos-animate')}}),{threshold:.15});
-        document.querySelectorAll('[data-aos]').forEach(el=>io.observe(el));
-        /* sticky hero shrink */
-        const header=document.getElementById('heroHeader');
-        window.addEventListener('scroll',()=>{
-          const trigger=document.getElementById('about');
-          if(trigger.getBoundingClientRect().top<=80){header.classList.add('stickyHero');}
-          else{header.classList.remove('stickyHero');}
-        });
-      });
-    </script>
-  </head>
-  <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200 font-sans">
-    <!-- ===== Hero Section ===== -->
-    <section id="home" class="min-h-screen flex flex-col justify-center px-6 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-      <div class="max-w-4xl mx-auto flex items-center gap-6">
-        <!-- Shrinkable header container -->
-        <div id="heroHeader" class="flex items-center gap-4">
-          <img src="photo.jpg" alt="Sujay Kumar" class="rounded-full w-40 aspect-square object-cover shadow-xl border-4 border-gray-700" />
-          <h1 class="text-5xl font-extrabold text-white whitespace-nowrap">Sujay Kumar</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sujay Kumar | Portfolio</title>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Typed.js for typing animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+
+  <!-- Simple AOS‑style fade‑in -->
+  <style>
+    [data-aos]{opacity:0;transform:translateY(40px);transition:all .7s ease-out}
+    [data-aos].aos-animate{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200 font-sans">
+
+  <!-- ========== HERO ========== -->
+  <header id="home" class="min-h-screen flex flex-col justify-center items-center px-4 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Sujay Kumar</h1>
+
+    <!-- Typed roles -->
+    <h2 class="text-xl md:text-2xl text-indigo-400 h-8 mb-8">
+      <span id="typed-roles"></span>
+    </h2>
+
+    <!-- Social icons -->
+    <div class="flex gap-6 text-3xl mb-10">
+      <a href="https://github.com/sujaykumar03" target="_blank" class="hover:text-white"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/sujay-kumar-7456bb247" target="_blank" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:sujay3336@gmail.com" class="hover:text-red-400"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="resume.pdf" download
+         class="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-full shadow">Resume</a>
+      <a href="#contact"
+         class="px-8 py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="py-20 px-6" data-aos>
+    <div class="max-w-3xl mx-auto text-center">
+      <img src="photo.png" alt="Sujay Kumar"
+           class="mx-auto w-36 h-36 rounded-full border-4 border-gray-700 shadow-lg mb-6" />
+      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+      <p class="text-gray-300">
+        I'm a final‑year engineering student passionate about Python, React and machine learning. I love
+        solving problems and contributing to open‑source.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="py-20 px-6 bg-gray-800" data-aos>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold text-center mb-10">Skills & Tech Stack</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-5 gap-8 place-items-center text-5xl">
+        <i class="fab fa-python" title="Python"></i>
+        <i class="fab fa-js-square" title="JavaScript"></i>
+        <i class="fab fa-react" title="React"></i>
+        <i class="fab fa-git-alt" title="Git"></i>
+        <i class="fas fa-database" title="SQL/DB"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="py-20 px-6" data-aos>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold text-center mb-10">Projects</h2>
+
+      <div class="grid gap-10 md:grid-cols-2">
+        <!-- DetectVision -->
+        <article class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="detectvision.png" alt="DetectVision" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">DetectVision</h3>
+            <p class="text-gray-300 mb-4">
+              Object detection toolkit built with Python, OpenCV &amp; MobileNet.
+            </p>
+            <a href="https://github.com/sujaykumar03/DetectVision" target="_blank"
+               class="text-indigo-400 hover:underline">View Code</a>
+          </div>
+        </article>
+
+        <!-- QueryTwin -->
+        <article class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="querytwin.png" alt="QueryTwin" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">QueryTwin</h3>
+            <p class="text-gray-300 mb-4">
+              NLP project to find semantically similar Quora questions.
+            </p>
+            <span class="text-gray-400">Coming soon</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CODING PLATFORMS ========== -->
+  <section id="coding" class="py-20 px-6 bg-gray-800" data-aos>
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-8">Coding Platforms</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="flex items-center gap-4 bg-gray-900 p-4 rounded-lg">
+          <img src="logos/leetcode.png" class="w-12 h-12" alt="LeetCode" />
+          <div class="text-left">
+            <p class="font-semibold text-white">LeetCode</p>
+            <a href="https://leetcode.com/sujaykumar03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
+          </div>
         </div>
-        <!-- Hero intro & buttons -->
-        <div class="ml-6" data-aos>
-          <p class="text-lg text-gray-300 max-w-xl mb-6">Engineering student · Python & React Developer · ML Enthusiast</p>
-          <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
-            <a href="#projects" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-full shadow transition">View Projects</a>
-            <a href="#contact" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-full shadow transition">Contact Me</a>
+        <div class="flex items-center gap-4 bg-gray-900 p-4 rounded-lg">
+          <img src="logos/gfg.svg" class="w-12 h-12 bg-white rounded" alt="GFG" />
+          <div class="text-left">
+            <p class="font-semibold text-white">GeeksforGeeks</p>
+            <a href="https://auth.geeksforgeeks.org/user/sujay.kumar03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-gray-900 p-4 rounded-lg">
+          <img src="logos/codechef.svg" class="w-12 h-12" alt="CodeChef" />
+          <div class="text-left">
+            <p class="font-semibold text-white">CodeChef</p>
+            <a href="https://www.codechef.com/users/sujay03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-gray-900 p-4 rounded-lg">
+          <img src="logos/hackerrank.png" class="w-12 h-12" alt="HackerRank" />
+          <div class="text-left">
+            <p class="font-semibold text-white">HackerRank</p>
+            <a href="https://www.hackerrank.com/sujaykumar03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== About Section ===== -->
-    <section id="about" class="py-20 px-6" data-aos>
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold mb-6 text-white">About Me</h2>
-        <img src="photo1.JPG" alt="Sujay Kumar" class="mx-auto w-36 h-36 rounded-full border-4 border-gray-700 shadow-lg mb-6" data-aos />
-        <p class="text-gray-300">I'm a final‑year engineering student passionate about creating solutions with Python, React, and machine learning. I enjoy contributing to open‑source and building meaningful, user‑focused tools.</p>
-      </div>
-    </section>
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="py-20 px-6 bg-gray-900" data-aos>
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-6 text-white">Contact Me</h2>
+      <p class="text-gray-300 mb-6">Got an idea or question? Drop me a line!</p>
+      <a href="mailto:sujay3336@gmail.com"
+         class="inline-block bg-indigo-600 hover:bg-indigo-500 px-8 py-3 rounded-full shadow">Email Me</a>
+    </div>
+  </section>
 
-    <!-- ===== Projects Section ===== -->
-    <section id="projects" class="py-20 px-6 bg-gray-800" data-aos>
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-10 text-center text-white">Projects</h2>
-        <div class="grid gap-8 md:grid-cols-2">
-          <div class="glass p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-[1.03]">
-            <img src="detectvision.png" alt="DetectVision" class="rounded-md mb-4 object-cover h-40 w-full" />
-            <h3 class="font-bold text-xl text-white mb-2">DetectVision</h3>
-            <p class="text-sm text-gray-300 mb-4">Object detection toolkit using Python, OpenCV & MobileNet.</p>
-            <a href="https://github.com/sujaykumar03/DetectVision" target="_blank" class="text-indigo-400 hover:underline text-sm font-medium">View on GitHub</a>
-          </div>
-          <div class="glass p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-[1.03]">
-            <img src="querytwin.png" alt="QueryTwin" class="rounded-md mb-4 object-cover h-40 w-full" />
-            <h3 class="font-bold text-xl text-white mb-2">QueryTwin</h3>
-            <p class="text-sm text-gray-300 mb-4">NLP tool for finding similar Quora questions using vector similarity.</p>
-            <span class="text-gray-400 text-sm">Coming Soon</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Scroll to Top -->
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="fixed bottom-6 right-6 p-3 text-lg bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-lg">
+    ↑
+  </button>
 
-    <!-- ===== Coding Platforms Section ===== -->
-    <section id="coding" class="py-20 px-6 bg-gray-800" data-aos>
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold mb-6 text-white">Coding Platforms</h2>
-        <p class="text-gray-400 mb-10">Here are my profiles and stats from various coding platforms.</p>
-        <div class="grid gap-8 md:grid-cols-2">
-          <div class="glass p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-            <h3 class="text-xl font-semibold text-white mb-2">LeetCode</h3>
-            <p class="text-sm text-gray-300 mb-4">@sujaykumar03</p>
-            <img src="lol.png" alt="LeetCode Logo" class="w-12 h-12" />
-          </div>
-          <div class="glass p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-            <h3 class="text-xl font-semibold text-white mb-2">GeeksforGeeks</h3>
-            <p class="text-sm text-gray-300 mb-4">@sujay_kumar</p>
-            <a href="https://auth.geeksforgeeks.org/user/sujay_kumar" target="_blank" class="text-indigo-400 hover:underline text-sm">View Profile</a>
-          </div>
-          <div class="glass p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-            <h3 class="text-xl font-semibold text-white mb-2">CodeChef</h3>
-            <p class="text-sm text-gray-300 mb-4">@sujay_kumar3</p>
-            <a href="https://www.codechef.com/users/sujay_kumar3" target="_blank" class="text-indigo-400 hover:underline text-sm">View Profile</a>
-          </div>
-          <div class="glass p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-            <h3 class="text-xl font-semibold text-white mb-2">HackerRank</h3>
-            <p class="text-sm text-gray-300 mb-4">@sujaykumar03</p>
-            <a href="https://www.hackerrank.com/sujaykumar03" target="_blank" class="text-indigo-400 hover:underline text-sm">View Profile</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Footer -->
+  <footer class="text-center text-xs py-6 bg-gray-900 text-gray-500">
+    © 2025&nbsp;Sujay&nbsp;Kumar
+  </footer>
 
-    <!-- ===== Contact Section ===== -->
-    <section id="contact" class="py-20 px-6 bg-gray-900" data-aos>
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold mb-6 text-white">Contact Me</h2>
-        <p class="text-gray-300 mb-8">Feel free to reach out via email or connect with me on social platforms.</p>
-        <div class="flex justify-center space-x-8 text-2xl text-gray-300">
-          <a href="mailto:sujay3336@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
-          <a href="https://github.com/sujaykumar03" target="_blank" class="hover:text-white"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/sujay-kumar-7456bb247" target="_blank" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-    </section>
-      <!-- Scroll to Top Button -->
-    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" title="Back to top"
-      class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white text-lg shadow-lg transition-opacity duration-300">
-      ↑
-    </button>
+  <!-- Typed.js init -->
+  <script>
+    new Typed('#typed-roles', {
+      strings: ['ML Enthusiast', 'Python Developer', 'Open Source Contributor'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 2000,
+      loop: true
+    });
+  </script>
 
+  <!-- Minimal AOS polyfill -->
+  <script>
+    document.querySelectorAll('[data-aos]').forEach(el=>{
+      const io=new IntersectionObserver(ent=>{
+        ent.forEach(e=>{if(e.isIntersecting)e.target.classList.add('aos-animate')});
+      },{threshold:.1});
+      io.observe(el);
+    });
+  </script>
 </body>
 </html>
