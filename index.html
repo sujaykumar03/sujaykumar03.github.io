@@ -11,50 +11,42 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-  <!-- Global styles: starfield + link/button hover -->
+  <!-- tsParticles (star‑field) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.min.js"></script>
+
+  <!-- Typed.js for typing roles -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+
+  <!-- Styles -->
   <style>
-    /* === Moving star‑field background === */
-    body{
-      background:#000 url("https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/bg-stars.png") repeat;
-      animation:moveStars 160s linear infinite;
-    }
-    @keyframes moveStars{
-      from{background-position:0 0;}
-      to{background-position:-10000px 5000px;}
-    }
+    /* full‑screen canvas – tsParticles injects into this div */
+    #tsparticles{position:fixed;inset:0;z-index:-1}
 
-    /* Hover glow for all <a> and .btn */
-    a, .btn{
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    a:hover, .btn:hover{
-      transform:translateY(-3px) scale(1.05);
-      box-shadow:0 4px 14px rgba(255,255,255,.25);
-    }
+    /* hover glow */
+    a,.btn{transition:transform .25s,box-shadow .25s}
+    a:hover,.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 4px 14px rgba(255,255,255,.25)}
 
-    /* Simple AOS‑style fade */
+    /* fade‑in on scroll */
     [data-aos]{opacity:0;transform:translateY(40px);transition:all .7s ease-out}
     [data-aos].aos-animate{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body class="text-gray-200 font-sans">
 
+<!-- ⭐️ Dynamic star background -->
+<div id="tsparticles"></div>
+
 <!-- ===== HERO ===== -->
 <header id="home" class="min-h-screen flex flex-col justify-center items-center px-4 text-center">
   <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Sujay Kumar</h1>
-  <!-- Typed roles -->
-  <h2 class="text-xl md:text-2xl text-indigo-400 h-8 mb-8">
-    <span id="typed-roles"></span>
-  </h2>
+  <h2 class="text-xl md:text-2xl text-indigo-400 h-8 mb-8"><span id="typed-roles"></span></h2>
 
-  <!-- Social icons -->
   <div class="flex gap-6 text-3xl mb-10">
     <a href="https://github.com/sujaykumar03" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com/in/sujay-kumar-7456bb247" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="mailto:sujay3336@gmail.com"><i class="fas fa-envelope"></i></a>
   </div>
 
-  <!-- CTA buttons -->
   <div class="flex flex-col sm:flex-row gap-4">
     <a href="resume.pdf" download class="btn px-8 py-3 bg-indigo-600 rounded-full shadow">Resume</a>
     <a href="#contact" class="btn px-8 py-3 bg-gray-700 rounded-full shadow">Contact Me</a>
@@ -75,7 +67,7 @@
 </section>
 
 <!-- ===== SKILLS ===== -->
-<section id="skills" class="py-20 px-6 bg-gray-800 bg-opacity-60" data-aos>
+<section id="skills" class="py-20 px-6 bg-gray-800/70" data-aos>
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-semibold text-center mb-10">Skills & Tech Stack</h2>
     <div class="grid grid-cols-3 sm:grid-cols-5 gap-8 place-items-center text-5xl">
@@ -95,7 +87,7 @@
 
     <div class="grid gap-10 md:grid-cols-2">
       <!-- DetectVision -->
-      <article class="bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden shadow-lg">
+      <article class="bg-gray-800/70 rounded-xl overflow-hidden shadow-lg">
         <img src="detectvision.png" alt="DetectVision" class="h-48 w-full object-cover" />
         <div class="p-6">
           <h3 class="text-xl font-bold mb-2">DetectVision</h3>
@@ -108,7 +100,7 @@
       </article>
 
       <!-- QueryTwin -->
-      <article class="bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden shadow-lg">
+      <article class="bg-gray-800/70 rounded-xl overflow-hidden shadow-lg">
         <img src="querytwin.png" alt="QueryTwin" class="h-48 w-full object-cover" />
         <div class="p-6">
           <h3 class="text-xl font-bold mb-2">QueryTwin</h3>
@@ -123,38 +115,34 @@
 </section>
 
 <!-- ===== CODING PLATFORMS ===== -->
-<section id="coding" class="py-20 px-6 bg-gray-800 bg-opacity-60" data-aos>
+<section id="coding" class="py-20 px-6 bg-gray-800/70" data-aos>
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-semibold mb-8">Coding Platforms</h2>
     <div class="grid gap-8 md:grid-cols-2">
-      <!-- LeetCode -->
-      <div class="flex items-center gap-4 bg-gray-900 bg-opacity-70 p-4 rounded-lg">
+      <div class="flex items-center gap-4 bg-gray-900/80 p-4 rounded-lg">
         <img src="logos/leetcode.png" class="w-12 h-12" alt="LeetCode" />
-        <div class="text-left">
+        <div>
           <p class="font-semibold text-white">LeetCode</p>
           <a href="https://leetcode.com/sujaykumar03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
         </div>
       </div>
-      <!-- GFG -->
-      <div class="flex items-center gap-4 bg-gray-900 bg-opacity-70 p-4 rounded-lg">
+      <div class="flex items-center gap-4 bg-gray-900/80 p-4 rounded-lg">
         <img src="logos/gfg.svg" class="w-12 h-12 bg-white rounded" alt="GFG" />
-        <div class="text-left">
+        <div>
           <p class="font-semibold text-white">GeeksforGeeks</p>
           <a href="https://auth.geeksforgeeks.org/user/sujay.kumar03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
         </div>
       </div>
-      <!-- CodeChef -->
-      <div class="flex items-center gap-4 bg-gray-900 bg-opacity-70 p-4 rounded-lg">
+      <div class="flex items-center gap-4 bg-gray-900/80 p-4 rounded-lg">
         <img src="logos/codechef.svg" class="w-12 h-12" alt="CodeChef" />
-        <div class="text-left">
+        <div>
           <p class="font-semibold text-white">CodeChef</p>
           <a href="https://www.codechef.com/users/sujay03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
         </div>
       </div>
-      <!-- HackerRank -->
-      <div class="flex items-center gap-4 bg-gray-900 bg-opacity-70 p-4 rounded-lg">
+      <div class="flex items-center gap-4 bg-gray-900/80 p-4 rounded-lg">
         <img src="logos/hackerrank.png" class="w-12 h-12" alt="HackerRank" />
-        <div class="text-left">
+        <div>
           <p class="font-semibold text-white">HackerRank</p>
           <a href="https://www.hackerrank.com/sujaykumar03" target="_blank" class="text-indigo-400 text-sm">View Profile</a>
         </div>
@@ -164,12 +152,11 @@
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact" class="py-20 px-6 bg-gray-900 bg-opacity-70" data-aos>
+<section id="contact" class="py-20 px-6 bg-gray-900/80" data-aos>
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-3xl font-semibold mb-6 text-white">Contact Me</h2>
     <p class="text-gray-300 mb-6">Got an idea or question? Drop me a line!</p>
-    <a href="mailto:sujay3336@gmail.com"
-       class="btn inline-block bg-indigo-600 px-8 py-3 rounded-full shadow">Email Me</a>
+    <a href="mailto:sujay3336@gmail.com" class="btn inline-block bg-indigo-600 px-8 py-3 rounded-full shadow">Email Me</a>
   </div>
 </section>
 
@@ -181,12 +168,12 @@
 
 <!-- Footer -->
 <footer class="text-center text-xs py-6 bg-black bg-opacity-80 text-gray-500">
-  © 2025 Sujay Kumar
+  © 2025&nbsp;Sujay Kumar
 </footer>
 
-<!-- Typed.js init -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+<!-- ==== Scripts ==== -->
 <script>
+  /* Typed roles */
   new Typed('#typed-roles', {
     strings: ['ML Enthusiast', 'Python Developer', 'Open Source Contributor'],
     typeSpeed: 50,
@@ -194,15 +181,26 @@
     backDelay: 1500,
     loop: true
   });
-</script>
 
-<!-- Minimal AOS polyfill -->
-<script>
+  /* Minimal AOS polyfill */
   document.querySelectorAll('[data-aos]').forEach(el=>{
     const io=new IntersectionObserver(ent=>{
       ent.forEach(e=>{if(e.isIntersecting)e.target.classList.add('aos-animate')});
     },{threshold:.1});
     io.observe(el);
+  });
+
+  /* tsParticles star‑field */
+  tsParticles.load("tsparticles",{
+    fullScreen:{enable:true,zIndex:-1},
+    particles:{
+      number:{value:160,density:{enable:true,area:1000}},
+      color:{value:"#ffffff"},
+      opacity:{value:{min:0.2,max:0.8}},
+      size:{value:{min:0.5,max:1.8}},
+      move:{enable:true,speed:0.15,direction:"right",straight:false}
+    },
+    background:{color:"#000000"}
   });
 </script>
 
