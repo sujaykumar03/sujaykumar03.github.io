@@ -4,28 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sujay Kumar | Portfolio</title>
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+      /* scroll‑in animation */
       [data-aos]{opacity:0;transform:translateY(40px) scale(.95);transition:all .8s cubic-bezier(.2,.8,.4,1)}
       [data-aos].aos-animate{opacity:1;transform:translateY(0) scale(1)}
+      /* glass card */
       .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(8px)}
+      /* sticky shrink header */
+      #heroHeader{transition:all .4s ease-in-out;transform-origin:top left}
+      #heroHeader.stickyHero{position:fixed;top:12px;left:16px;z-index:50;transform:scale(.55)}
     </style>
     <script>
       document.addEventListener('DOMContentLoaded',()=>{
-        const io=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('aos-animate')}),{threshold:.1});
+        /* IntersectionObserver for scroll animations */
+        const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('aos-animate')}}),{threshold:.15});
         document.querySelectorAll('[data-aos]').forEach(el=>io.observe(el));
+        /* sticky hero shrink */
+        const header=document.getElementById('heroHeader');
+        window.addEventListener('scroll',()=>{
+          const trigger=document.getElementById('about');
+          if(trigger.getBoundingClientRect().top<=80){header.classList.add('stickyHero');}
+          else{header.classList.remove('stickyHero');}
+        });
       });
     </script>
   </head>
   <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200 font-sans">
-
     <!-- ===== Hero Section ===== -->
-    <section id="home" class="min-h-screen flex items-center px-6 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-      <div class="max-w-4xl mx-auto flex items-center">
-        <img src="photo.jpg" alt="Sujay Kumar" class="rounded-full w-44 aspect-square object-cover shadow-xl border-4 border-gray-700" />
-        <div class="ml-6">
-          <h1 class="text-5xl font-extrabold text-white mb-3">Sujay Kumar</h1>
+    <section id="home" class="min-h-screen flex flex-col justify-center px-6 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
+      <div class="max-w-4xl mx-auto flex items-center gap-6">
+        <!-- Shrinkable header container -->
+        <div id="heroHeader" class="flex items-center gap-4">
+          <img src="photo.png" alt="Sujay Kumar" class="rounded-full w-40 aspect-square object-cover shadow-xl border-4 border-gray-700" />
+          <h1 class="text-5xl font-extrabold text-white whitespace-nowrap">Sujay Kumar</h1>
+        </div>
+        <!-- Hero intro & buttons -->
+        <div class="ml-6" data-aos>
           <p class="text-lg text-gray-300 max-w-xl mb-6">Engineering student · Python & React Developer · ML Enthusiast</p>
           <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
             <a href="#projects" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-full shadow transition">View Projects</a>
