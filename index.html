@@ -18,11 +18,22 @@
 
   <!-- Simple AOS‑style fade‑in -->
   <style>
+  <style>
+  body {
+    background: #000 url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/bg-stars.png') repeat;
+    animation: moveStars 100s linear infinite;
+  }
+  @keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+  }
+</style>
+
     [data-aos]{opacity:0;transform:translateY(40px);transition:all .7s ease-out}
     [data-aos].aos-animate{opacity:1;transform:translateY(0)}
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200 font-sans">
+<body class="text-gray-200 font-sans text-gray-200 font-sans">
 
   <!-- ========== HERO ========== -->
   <header id="home" class="min-h-screen flex flex-col justify-center items-center px-4 text-center">
